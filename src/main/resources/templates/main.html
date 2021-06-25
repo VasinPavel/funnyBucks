@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <style>
+        h1 {
+            color: #841d1d;
+            font-family: ‘Helvetica Neue’, sans-serif;
+            font-size: 100px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            line-height: 1;
+            text-align: center;
+        }
+
+        h2 {
+            color: #111;
+            font-family: ‘Open Sans’, sans-serif;
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 32px;
+            margin: 0 0 72px;
+            text-align: center;
+        }
+
+        p {
+            color: #685206;
+            font-family: ‘Helvetica Neue’, sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            margin: 0 0 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+            border-bottom: 2px solid #dfdfdf;
+            border-radius: 6px;
+            border-collapse: separate;
+            border-spacing: 0px;
+        }
+
+        table thead tr {
+            color: #ffffff;
+            font-weight: bold;
+            background: #841d1d;
+        }
+
+        table tr td {
+            border-right: 1px solid #dfdfdf;
+        }
+
+        table tr td:last-child {
+            border-right: 0px;
+        }
+
+        table tbody tr:nth-child(1n) {
+            background: #f6f6f6;
+        }
+
+        table tbody tr:nth-child(2n) {
+            background: #e6e6e6;
+        }
+
+        table tbody tr:hover {
+            background: #ffe8e8;
+            transition-duration: 0.6s;
+        }
+
+        .scroll-table table {
+            width: 100%;
+            table-layout: fixed;
+            border: none;
+        }
+
+        .scroll-table thead th {
+            font-weight: bold;
+            text-align: left;
+            border: none;
+            padding: 10px 15px;
+            background: #d8d8d8;
+            font-size: 14px;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+
+        .scroll-table tbody td {
+            text-align: left;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            padding: 10px 15px;
+            font-size: 14px;
+            vertical-align: top;
+        }
+
+        .scroll-table tbody tr:nth-child(even) {
+            background: #f3f3f3;
+        }
+    </style>
+</head>
+<body>
+<h1>FunnyBucks</h1>
+<h2>Сегодня курс доллара поднялся или опустился?</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Валюта</th>
+        <th>Выберите валюту</th>
+    </tr>
+    </thead>
+    <tbody>
+    <div th:each="i : ${page}">
+        <tr>
+            <td th:text="${i.getKey()}"/>
+            <td><a th:href="'/main/' + ${i.getKey()}">выбрать</a></td>
+        </tr>
+    </div>
+    </tbody>
+</table>
+</body>
+</html>
