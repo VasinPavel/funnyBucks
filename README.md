@@ -19,8 +19,6 @@ REST API гифок - https://developers.giphy.com/docs/api#quick-start-guide
 
 На сервис написаны модульные и интеграционные тесты.
 ```  
-```
-```
 ***
 ## Инструкция:
 
@@ -32,6 +30,19 @@ java -jar funnyBucks1.0.jar
 ```
 localhost:8080/main
 ```
+
+
+## Запуск через Doker
+
+Создать Doker образ. Для этого необходимо выполнить команду из корневой папки проекта:
+```
+docker build -t funnyBucks .
+```
+Запуск контейнера:
+```
+docker run -p 8080:8080 funnyBucks
+```
+
 
 ***
 - Все настройки проекта находятся в файле ``` funnyBucks/src/main/resources/application.properties ```
